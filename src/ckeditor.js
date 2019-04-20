@@ -38,8 +38,6 @@ import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefrom
 import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import ImageEmbed from './plugins/imageEmbed.js';
-// const ImageEmbed = require('./plugins/imageEmbed.js');
-// let imageEmbed = new ImageEmbed();
 export default class FullEditor extends ClassicEditorBase {}
 
 // Plugins to include in the build.
