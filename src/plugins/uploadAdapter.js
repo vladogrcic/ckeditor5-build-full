@@ -5,9 +5,7 @@ export default class UploadAdapter extends Plugin{
 
         // URL where to send files.
 		this.url = 'https://example.com/image/upload/path';
-		// return this.editor.plugins.get( 'FileRepository' ).createUploadAdapter = ( loader ) => {
-		// 	return this( loader );
-		// };
+		
     }
 	// init(){
 	// 	editor.ui.componentFactory.add( 'imageEmbed', locale => {
