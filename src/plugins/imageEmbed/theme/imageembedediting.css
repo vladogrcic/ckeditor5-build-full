@@ -1,0 +1,47 @@
+/*
+ * Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
+ * For licensing, see LICENSE.md.
+ */
+
+@import "@ckeditor/ckeditor5-ui/theme/components/tooltip/mixins/_tooltip.css";
+
+.ck-image__wrapper {
+	& .ck-image__placeholder {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		& .ck-image__placeholder__url {
+			@mixin ck-tooltip_enabled;
+
+			/* Otherwise the URL will overflow when the content is very narrow. */
+			max-width: 100%;
+
+			position: relative;
+
+			&:hover {
+				@mixin ck-tooltip_visible;
+			}
+
+			& .ck-image__placeholder__url__text {
+				overflow: hidden;
+				display: block;
+			}
+		}
+	}
+
+	&[data-oembed-url*="twitter.com"],
+	&[data-oembed-url*="google.com/maps"],
+	&[data-oembed-url*="facebook.com"],
+	&[data-oembed-url*="instagram.com"] {
+		& .ck-image__placeholder__icon * {
+			display: none;
+		}
+	}
+}
+
+/* Disable all mouse interaction as long as the editor is not read–only.
+   https://github.com/ckeditor/ckeditor5-image-embed/issues/58 */
+.ck-editor__editable:not(.ck-read-only) .ck-image__wrapper > *:not(.ck-image__placeholder) {
+	pointer-events: none;
+}

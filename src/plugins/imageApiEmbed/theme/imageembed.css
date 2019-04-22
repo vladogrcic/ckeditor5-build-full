@@ -1,0 +1,21 @@
+/*
+ * Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
+ * For licensing, see LICENSE.md.
+ */
+
+.ck-content .image {
+	/* Don't allow floated content overlap the image.
+	https://github.com/ckeditor/ckeditor5-image-embed/issues/53 */
+	clear: both;
+
+	/* Make sure there is some space between the content and the image. */
+	margin: 1em 0;
+
+	/* Make sure image is not overriden with Bootstrap default `flex` value.
+	See: https://github.com/ckeditor/ckeditor5/issues/1373. */
+	display: block;
+
+	/* Give the image some minimal width in the content to prevent them
+	from being "squashed" in tight spaces, e.g. in table cells (#44) */
+	min-width: 15em;
+}
